@@ -23,7 +23,7 @@ const Card: React.FC<CardProps> = ({ title, description, imgSrc, reversed = fals
                     {icons.length > 0 && (
                         <div className = "flex space-x-4">
                             {icons.map((Icon, index) => (
-                                <Icon key={index} className="text-gray-300" size={32}/>
+                                <Icon key={index} size={32}/>
                             ))}
                         </div>
                     )}
