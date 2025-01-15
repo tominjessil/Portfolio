@@ -1,16 +1,17 @@
 import Card from "@/components/ui/card";
-import { FaReact, FaNodeJs, FaDatabase } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaDatabase, FaJava } from "react-icons/fa";
+import { DiSwift } from "react-icons/di";
 
 const Projects = () => {
     const projects = [
-        { id: 1, title: "Project One", description: "Description for project one.", imgSrc: "/image1.jpeg", reversed: false },
-        { id: 2, title: "Project Two", description: "Description for project two.", imgSrc: "/image2.jpeg", reversed: true },
-        { id: 3, title: "Project Three", description: "Description for project three.", imgSrc: "/image3.jpeg", reversed: false, icons: [FaReact, FaNodeJs, FaDatabase] },
+        { id: 1, title: "Chaps Challenge", description: "This was a group project where the retro game 'Chips Challenge' was recreated (with premission) with our own touches.", imgSrc: "/image1.jpeg", reversed: false, icons: [FaJava] },
+        { id: 2, title: "Flight Tracker (WiP)", description: "A simple app that displays flight data such as departure and gate.", imgSrc: "/image2.jpeg", reversed: true, icons: [DiSwift]},
+        { id: 3, title: "Project Three", description: "Description for project three.", imgSrc: "/image3.jpeg", reversed: false, icons: [FaReact, FaNodeJs, FaDatabase]},
     ];
 
     return (
-        <section id="projects" className="mt-20 px-4 sm:px-6 lg:px-20">
-            <h1 className="text-center mt-10 text-4xl font-extrabold">
+        <section id="projects" className="mt-14 px-4 sm:px-6 lg:px-20 text-black">
+            <h1 className="text-center text-4xl font-extrabold">
                 Here are some of my works
             </h1>
             <div className="mt-10 grid grid-cols-1 gap-6">
