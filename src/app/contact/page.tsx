@@ -1,97 +1,147 @@
-"use client";
-import React from "react";
-import { useFormik } from "formik";
+'use client'
 
-const Contact = () => {
-  const formik = useFormik({
-    initialValues: { email: "", name: "", surname:"", message:""},
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+import { z } from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useForm } from 'react-hook-form'
+import { toast } from 'sonner'
+import { Input } from "@/components/ui/input"
+import { Textarea } from '@/components/ui/textarea'
+
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} 
+
+
+from '@/components/ui/form'
+import { Button } from '@/components/ui/button'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
+
+// Schema for contact form validation
+const formSchema = z.object({
+  name: z
+    .string()
+    .min(2, { message: 'Name must be at least 2 characters long' }),
+  email: z.string().email({ message: 'Invalid email address' }),
+  message: z
+    .string()
+    .min(10, { message: 'Message must be at least 10 characters long' }),
+})
+
+export default function ContactFormPreview() {
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: '',
+      email: '',
+      message: '',
     },
-  });
+  })
+
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      // Simulate a successful contact form submission
+      console.log(values)
+      toast.success('Your message has been sent successfully!')
+    } catch (error) {
+      console.error('Error submitting contact form', error)
+      toast.error('Failed to send your message. Please try again.')
+    }
+  }
 
   return (
-    <div className="flex justify-center items-center mt-16">
+    <div className="flex min-h-[60vh] h-full w-full items-center justify-center px-4 mt-20 mb-20">
+      <Card className="mx-auto max-w-md">
+        <CardHeader>
+          <CardTitle className="text-4xl mb-4">Contact Me</CardTitle>
+          <CardDescription>
+            Please fill out the form below and I'll get back to you shortly.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+              <div className="grid gap-4">
+                {/* Name Field */}
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem className="grid gap-2">
+                      <FormLabel htmlFor="name">Name</FormLabel>
+                      <FormControl>
+                        <Input
+                          id="name"
+                          placeholder="John Doe"
+                          type="text"
+                          autoComplete="name"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
 
-      <form
-        onSubmit={formik.handleSubmit}
-        className="w-full max-w-md p-8 bg-white rounded-md text-black"
-      >
-        <h2 className="text-4xl font-bold text-center mb-6 text-black">
-          Contact me 
-        </h2>
-        <div className="mb-4">
-          <label
-            htmlFor="name"
-            className="block text-sm text-black font-bold mt-5 mb-2"
-          >
-            First Name
-          </label>
-          <input
-            id="name"
-            name="name"
-            type="name"
-            onChange={formik.handleChange}
-            value={formik.values.name}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            placeholder="Enter your first name"
-          />
+                {/* Email Field */}
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem className="grid gap-2">
+                      <FormLabel htmlFor="email">Email</FormLabel>
+                      <FormControl>
+                        <Input
+                          id="email"
+                          placeholder="johndoe@mail.com"
+                          type="email"
+                          autoComplete="email"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
 
-          <label
-            htmlFor="surname"
-            className="block text-sm text-black font-bold mt-5 mb-2"
-          >
-            Surname
-          </label>
-          <input
-            id="surname"
-            name="surname"
-            type="surname"
-            onChange={formik.handleChange}
-            value={formik.values.surname}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            placeholder="Enter your surname"
-          />
-          
-          <label
-            htmlFor="name"
-            className="block text-sm text-black font-bold mt-5 mb-2"
-          >
-            Email Address
-          </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            onChange={formik.handleChange}
-            value={formik.values.email}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-            placeholder="Please enter your email"
-          />
-          <label
-            htmlFor="email"
-            className="block text-sm text-black font-bold mt-5 mb-2"
-          >
-            Message
-          </label>
-          <textarea
-            id="message"
-            name="message"
-            onChange={formik.handleChange}
-            value={formik.values.message}
-            className="w-full h-52 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-black"
-            placeholder="Please type your message here"
-          />
-        </div>
-        <button
-          type="submit"
-          className="w-full bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300"
-        >
-          Submit
-        </button>
-      </form>
+                {/* Message Field */}
+                <FormField
+                  control={form.control}
+                  name="message"
+                  render={({ field }) => (
+                    <FormItem className="grid gap-2">
+                      <FormLabel htmlFor="message">Message</FormLabel>
+                      <FormControl>
+                        <Textarea
+                          id="message"
+                          placeholder="Your message..."
+                          autoComplete="off"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <Button type="submit" className="w-full bg-blue-500" >
+                  Send Message
+                </Button>
+              </div>
+            </form>
+          </Form>
+        </CardContent>
+      </Card>
     </div>
-  );
-};
-
-export default Contact;
+  )
+}

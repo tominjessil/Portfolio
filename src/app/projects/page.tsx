@@ -1,4 +1,4 @@
-import Card from "@/components/ui/card";
+import PCard from "@/components/ui/pcard";
 import { FaReact, FaNodeJs, FaDatabase, FaJava } from "react-icons/fa";
 import { DiSwift } from "react-icons/di";
 
@@ -16,7 +16,7 @@ const Projects = () => {
             </h1>
             <div className="mt-10 grid grid-cols-1 gap-6">
                 {projects.map((project) => (
-                    <Card
+                    <PCard
                         key={project.id}
                         title={project.title}
                         description={project.description}
