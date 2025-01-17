@@ -3,6 +3,7 @@ import NavBar from "../components/ui/navbar";
 import Projects from "./projects/page";
 import Experiences from "./experience/page";
 import Contact from "./contact/page";
+import { Toaster } from "sonner";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Projects />
       <Experiences />
       <Contact />
+      <Toaster position="bottom-right" />
     </div>
   );
 }
