@@ -8,21 +8,29 @@ interface PCardProps {
     icons?: IconType[];
 }
 
-const PCard: React.FC<PCardProps> = ({ title, description, imgSrc, reversed = false, icons = [] }) => {
+const PCard: React.FC<PCardProps> = ({ title, description, imgSrc, icons = [] }) => {
     return (
-        <div className={`flex flex-col md:flex-row ${reversed ? "md:flex-row-reverse" : "flex-row"} rounded-2xl overflow-hidden shadow-lg hover:shadow-blue-500 bg-white mx-auto w-full max-w-[900px] p-2 sm:p-4`}>
+        <div className="rounded-2xl flex flex-col bg-white shadow hover:shadow-lg w-full">
+            {/* Image Section */}
             <div className="w-full">
-                <img src={imgSrc} alt={title} className="w-full h-auto object-cover sm:h-48 md:h-56 lg:h-64"/>
+                <img
+                    src={imgSrc}
+                    alt={title}
+                    className="w-full h-36 object-cover rounded-t-lg"
+                />
             </div>
-            <div className="flex flex-col justify-between p-4 w-full">
-                <div className="text-center">
-                    <h2 className="text-2xl lg:text-3xl font-bold mb-2">{title}</h2>
-                    <p className="text-gray-600 text-sm lg:text-base mt-5">{description}</p>
-                </div>
+            {/* Text Content */}
+            <div className="p-4">
+                <h2 className="text-lg font-bold text-gray-800">{title}</h2>
+                <p className="text-gray-600 mt-2 text-base">{description}</p>
                 {icons.length > 0 && (
-                    <div className="mt-4 flex justify-center space-x-4">
+                    <div className="flex mt-3 space-x-2">
                         {icons.map((Icon, index) => (
-                            <Icon key={index} size={32} className="text-gray-500 hover:text-blue-500 transition" />
+                            <Icon
+                                key={index}
+                                size={25}
+                                className="text-gray-500 hover:text-blue-500 transition"
+                            />
                         ))}
                     </div>
                 )}
@@ -30,5 +38,6 @@ const PCard: React.FC<PCardProps> = ({ title, description, imgSrc, reversed = fa
         </div>
     );
 };
+
 
 export default PCard;
