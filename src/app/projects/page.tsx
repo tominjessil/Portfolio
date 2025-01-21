@@ -1,5 +1,5 @@
 import PCard from "@/components/ui/pcard";
-import { FaReact, FaNodeJs, FaDatabase, FaJava } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaDatabase, FaJava, FaPython } from "react-icons/fa";
 import { DiSwift } from "react-icons/di";
 
 const Projects = () => {
@@ -9,29 +9,22 @@ const Projects = () => {
             title: "Chaps Challenge",
             description:
                 "This was a group project where the retro game 'Chips Challenge' was recreated (with permission) with our own touches.",
-            imgSrc: "/image1.jpeg",
+            imgSrc: "/image1.png",
             icons: [FaJava],
         },
         {
             id: 2,
-            title: "Flight Tracker (WiP)",
+            title: "ML with IGP",
             description:
-                "A simple app that displays flight data such as departure and gate.",
-            imgSrc: "/image2.jpeg",
-            icons: [DiSwift],
-        },
-        {
-            id: 3,
-            title: "Project Three",
-            description: "Description for project three.",
-            imgSrc: "/image3.jpeg",
-            icons: [FaReact, FaNodeJs, FaDatabase],
-        },
+                "Growth rate classifiction for a marine species using Interval Genetic Programming.",
+            imgSrc: "/image2.png",
+            icons: [FaPython],
+        }
     ];
 
     return (
-        <section id="projects" className="flex flex-col items-center bg-black py-10">
-        <h1 className="text-center text-3xl font-extrabold text-white mb-8">
+        <section id="projects" className="flex flex-col items-center mt-16">
+        <h1 className="text-center text-4xl font-extrabold text-black mb-16">
             Here are some of my works
         </h1>
         {/* Modified grid setup */}
