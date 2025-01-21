@@ -15,7 +15,7 @@ const certifications = [
 const Experiences = () => {
   return (
     <section id="experience" className="mt-16 px-6 md:px-16 lg:px-48 text-black">
-      <h1 className="text-4xl font-bold text-center mb-10">My Experiences</h1>
+      <h1 className="text-4xl font-semibold text-center mb-10">My Experiences</h1>
       <div className="space-y-12">
         <div id="education">
           <h2 className="text-3xl font-bold mb-4">Education</h2>

@@ -24,8 +24,8 @@ const Projects = () => {
 
     return (
         <section id="projects" className="flex flex-col items-center mt-16">
-        <h1 className="text-center text-4xl font-extrabold text-black mb-16">
-            Here are some of my works
+        <h1 className="text-center text-4xl font-semibold text-black mb-16">
+            Here are some things I have worked on
         </h1>
         {/* Modified grid setup */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 px-4 w-full max-w-4xl mx-auto justify-items-center align-middle">
