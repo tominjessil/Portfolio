@@ -7,7 +7,6 @@ const Navbar = () => {
         <li><a href="#intro" className="hover:text-blue-500 cursor-pointer text-lg">Intro</a></li>
         <li><a href="#projects" className="hover:text-blue-500 cursor-pointer text-lg">Projects</a></li>
         <li><a href="#experience" className="hover:text-blue-500 cursor-pointer text-lg">Experience</a></li>
-        <li><a href="#education" className="hover:text-blue-500 cursor-pointer text-lg">Education</a></li>
         <li><a href="#contact" className="hover:text-blue-500 cursor-pointer text-lg">Contact</a></li>
       </ul>
     </nav>

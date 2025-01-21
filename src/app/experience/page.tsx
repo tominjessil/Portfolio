@@ -1,5 +1,6 @@
 import React from "react";
 import ExpCard from "@/components/ui/expCard";
+import Resume from "@/components/ui/resume";
 
 const experiences = [
   { id: 1, title: "Bachelor of Engineering (Honours)", description: "Majored in Software Engineering and concentrated in AI.", date: "2021-2024" },
