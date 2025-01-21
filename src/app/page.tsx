@@ -4,6 +4,7 @@ import Projects from "./projects/page";
 import Experiences from "./experience/page";
 import Contact from "./contact/page";
 import { Toaster } from "sonner";
+import Resume from "@/components/ui/resume";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Intro />
       <Projects />
       <Experiences />
+      <Resume/>
       <Contact />
       <Toaster position="bottom-right" />
     </div>

@@ -10,7 +10,7 @@ interface PCardProps {
 
 const PCard: React.FC<PCardProps> = ({ title, description, imgSrc, icons = [] }) => {
     return (
-        <div className="rounded-2xl flex flex-col bg-white shadow hover:shadow-lg w-full">
+        <div className="rounded-2xl flex flex-col bg-white shadow hover:shadow-xl w-full">
             {/* Image Section */}
             <div className="w-full">
                 <img
