@@ -60,10 +60,10 @@ export default function ContactFormPreview() {
   }
 
   return (
-    <div className="flex min-h-[60vh] h-full w-full items-center justify-center px-4 mt-20 mb-20">
+    <div className="flex min-h-[60vh] h-full w-full items-center justify-center px-4 mt-16 mb-16 font-roboto">
       <Card className="mx-auto max-w-md">
+        <h1 className='text-4xl font-roboto font-extrabold text-center'>Contact Me</h1>
         <CardHeader>
-          <CardTitle className="text-4xl mb-4">Contact Me</CardTitle>
           <CardDescription>
             Please fill out the form below and I'll get back to you shortly.
           </CardDescription>
@@ -78,11 +78,11 @@ export default function ContactFormPreview() {
                   name="name"
                   render={({ field }) => (
                     <FormItem className="grid gap-2">
-                      <FormLabel htmlFor="name">Name</FormLabel>
+                      <FormLabel className='text-base'htmlFor="name">Name</FormLabel>
                       <FormControl>
                         <Input
                           id="name"
-                          placeholder="John Doe"
+                          placeholder="Please enter your full name"
                           type="text"
                           autoComplete="name"
                           {...field}
@@ -99,11 +99,11 @@ export default function ContactFormPreview() {
                   name="email"
                   render={({ field }) => (
                     <FormItem className="grid gap-2">
-                      <FormLabel htmlFor="email">Email</FormLabel>
+                      <FormLabel className='text-base'htmlFor="email">Email</FormLabel>
                       <FormControl>
                         <Input
                           id="email"
-                          placeholder="johndoe@mail.com"
+                          placeholder="Please enter your email address"
                           type="email"
                           autoComplete="email"
                           {...field}
@@ -120,7 +120,7 @@ export default function ContactFormPreview() {
                   name="message"
                   render={({ field }) => (
                     <FormItem className="grid gap-2">
-                      <FormLabel htmlFor="message">Message</FormLabel>
+                      <FormLabel className='text-base' htmlFor="message">Message</FormLabel>
                       <FormControl>
                         <Textarea
                           id="message"
@@ -134,7 +134,7 @@ export default function ContactFormPreview() {
                   )}
                 />
 
-                <Button type="submit" className="w-full bg-blue-500" >
+                <Button type="submit" className="w-full bg-blue-500 text-base font-semibold" >
                   Send Message
                 </Button>
               </div>
