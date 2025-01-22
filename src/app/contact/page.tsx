@@ -50,11 +50,22 @@ export default function ContactFormPreview() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
-      // Simulate a successful contact form submission
-      console.log(values)
-      toast.success('Your message has been sent successfully!')
+      const response = await fetch('/api/form', {
+        method: 'POST',
+        headers: {'Contact-Type': 'application/json'},
+        body: JSON.stringify(values),
+      });
+      
+      if(response.ok){
+        toast.success('Your message has been sent successfully!');
+        form.reset();
+      }
+      else {
+        const errorData = await response.json();
+        toast.error(errorData.error || 'Failed to send your message. Please try again.');
+      }
+
     } catch (error) {
-      console.error('Error submitting contact form', error)
       toast.error('Failed to send your message. Please try again.')
     }
   }
