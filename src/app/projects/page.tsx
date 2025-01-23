@@ -23,7 +23,7 @@ const Projects = () => {
 
     return (
         <section id="projects" className="flex flex-col items-center mt-16">
-        <h1 className="text-center text-4xl font-semibold text-black mb-16">
+        <h1 className="text-center text-4xl font-semibold text-black mb-10">
             Here are some things I have worked on
         </h1>
         {/* Modified grid setup */}
