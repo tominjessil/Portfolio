@@ -1,6 +1,5 @@
 import PCard from "@/components/ui/pcard";
-import { FaReact, FaNodeJs, FaDatabase, FaJava, FaPython } from "react-icons/fa";
-import { DiSwift } from "react-icons/di";
+import { FaJava, FaPython } from "react-icons/fa";
 
 const Projects = () => {
     const projects = [
