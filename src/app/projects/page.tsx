@@ -1,5 +1,8 @@
 import PCard from "@/components/ui/pcard";
 import { FaJava, FaPython } from "react-icons/fa";
+import { RiSvelteFill } from "react-icons/ri";
+import { SiTypescript } from "react-icons/si";
+
 
 const Projects = () => {
     const projects = [
@@ -18,6 +21,14 @@ const Projects = () => {
                 "Growth rate classifiction for a marine species using Interval Genetic Programming.",
             imgSrc: "/image2.png",
             icons: [FaPython],
+        },
+        {
+            id: 3,
+            title: "Course Visualiser",
+            description:
+                "Design to assist course advisors at Victoria University.",
+            imgSrc: "/image3.png",
+            icons: [RiSvelteFill, SiTypescript],
         }
     ];
 
