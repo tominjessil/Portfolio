@@ -71,10 +71,10 @@ export default function ContactFormPreview() {
   }
 
   return (
-    <div id="contact" className="flex min-h-[60vh] h-full w-full items-center justify-center px-4 mt-8 mb-16 font-roboto">
-      <Card className="mx-auto max-w-md">
+    <div id="contact" className="flex min-h-[60vh] h-full w-full items-center justify-center px-4 mt-8 mb-16 font-roboto bg-bg-custom">
+      <Card className="mx-auto max-w-md bg-bg-custom">
         <CardHeader>
-          <CardTitle className='text-4xl font-roboto font-semibold text-center mb-4'>Contact Me</CardTitle>
+          <CardTitle className='text-4xl font-roboto font-semibold text-center mb-4 '>Contact Me</CardTitle>
           <CardDescription>
             Please fill out the form below and I'll get back to you shortly.
           </CardDescription>
