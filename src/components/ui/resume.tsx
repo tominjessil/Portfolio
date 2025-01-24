@@ -15,7 +15,7 @@ const Resume = () => {
     };
 
     return (
-        <div className="flex justify-center items-center mt-12">
+        <div className="flex justify-center items-center mt-12 ">
             <button 
                 className="flex text-center px-6 py-3 rounded-lg justify-center text-base bg-blue-500 text-white font-semibold shadow-md hover:shadow-xl hover:bg-blue-600 hover:shadow-slate-300 transition-shadow duration-300"
                 type="button"

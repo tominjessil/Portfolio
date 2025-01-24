@@ -1,5 +1,5 @@
 import PCard from "@/components/ui/pcard";
-import { FaJava, FaPython } from "react-icons/fa";
+import { FaJava, FaPython, FaSwift } from "react-icons/fa";
 import { RiSvelteFill } from "react-icons/ri";
 import { SiTypescript } from "react-icons/si";
 
@@ -26,9 +26,17 @@ const Projects = () => {
             id: 3,
             title: "Course Visualiser",
             description:
-                "Design to assist course advisors at Victoria University.",
+                "Designed to assist course advisors at Victoria University.",
             imgSrc: "/image3.png",
             icons: [RiSvelteFill, SiTypescript],
+        },
+        {
+            id: 4,
+            title: "Flight Tracker (WiP)",
+            description:
+                "Created to provide information about flights to assist travellers.",
+            imgSrc: "/image4.png",
+            icons: [FaSwift],
         }
     ];
 

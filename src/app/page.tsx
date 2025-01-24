@@ -8,7 +8,7 @@ import Resume from "@/components/ui/resume";
 
 export default function Home() {
   return (
-    <div className="bg-white">
+    <div className="bg-bg-custom">
       <NavBar />
       <Intro />
       <Projects />
