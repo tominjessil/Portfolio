@@ -25,7 +25,6 @@ const Resume = () => {
                             src="/Tomin_Jessil_Resume.pdf#toolbar=0"
                             width="100%"
                             height="100%"
-                            title="Resume"
                             className="w-full h-full"
                             >
                         </iframe>
