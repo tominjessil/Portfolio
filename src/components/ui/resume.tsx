@@ -30,7 +30,7 @@ const Resume = () => {
                     <div className="p-4 rounded-xl w-4/5 md:w-1/2 relative hover:scrollbar-visible overflow-y-auto h-screen"
                     onClick={(e) => e.stopPropagation()}>
                         <iframe
-                            src="/resume.pdf#toolbar=0"
+                            src="/Tomin_Jessil_Resume.pdf#toolbar=0"
                             width="100%"
                             height="100%"
                             title="Resume"
