@@ -6,14 +6,6 @@ import React, { useState } from "react";
 const Resume = () => {
     const [showResume, setShowResume] = useState(false);
 
-    const handleViewResume = () => {
-        setShowResume(true);
-    };
-
-    const handleCloseModal = () => {
-        setShowResume(false); 
-    };
-
     return (
         <div className="flex justify-center items-center mt-12 ">
             <button 
