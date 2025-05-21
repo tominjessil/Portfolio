@@ -6,7 +6,7 @@ const experiences = [
   { id: 1, title: "Bachelor of Engineering (Honours)", description: "Majored in Software Engineering and concentrated in AI.", date: "2021-2024" },
 ];
 const work = [
-  { id: 2, title: "Team Member at Bunnings", description: "Retail and customer service", date: "Since November 2020",},
+  { id: 2, title: "Team Member at Bunnings", description: "Retail and customer service", date: "Since September 2020",},
 ];
 const certifications = [
   { id: 3, title: "AWS Certified Cloud Practitioner", description: "", date: "Recieved on June 2024" , link: { url: "https://www.credly.com/badges/658b4dca-b7af-4f4c-997b-80ba0cda2dbb/public_url", text: "View on Credly 🔗" } },
