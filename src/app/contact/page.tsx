@@ -6,6 +6,8 @@ import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
 import { Input } from "@/components/ui/input"
 import { Textarea } from '@/components/ui/textarea'
+import { motion, Variants } from "framer-motion";
+
 
 import {
   Form,
@@ -17,6 +19,7 @@ import {
 } 
 
 
+
 from '@/components/ui/form'
 import { Button } from '@/components/ui/button'
 import {
@@ -26,6 +29,8 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+
+
 
 // Schema for contact form validation
 const formSchema = z.object({
@@ -39,6 +44,24 @@ const formSchema = z.object({
 })
 
 export default function ContactFormPreview() {
+
+  const container: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2 },
+    },
+  };
+
+  const fadeUp: Variants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] },
+    },
+  };
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {

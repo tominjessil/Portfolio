@@ -13,6 +13,7 @@ export default {
 			roboto: ['Roboto', 'sans-serif'],
 		  },
   		colors: {
+			'linkedin-blue': '#0A66C2',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
 			"bg-custom":"#F9F9F9",
